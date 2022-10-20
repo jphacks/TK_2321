@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import React from 'react'
 import styled from 'styled-components'
-import { Box, chakra } from '@chakra-ui/react'
+import Button from '@mui/material/Button'
 
 const Container = styled.div`
   display: flex;
@@ -154,9 +154,15 @@ const HomePage: NextPage = () => {
             </p>
           </Card>
         </Grid>
-        <Box>
-          <chakra.h2 color="tomato">This is chakra-ui</chakra.h2>
-        </Box>
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          sx={{ mt: 3, mb: 2 }}
+          href="https://github.com/mui/material-ui/tree/v5.10.8/docs/data/material/getting-started/templates/dashboard"
+        >
+          material-ui
+        </Button>
       </Main>
       <Footer>
         <a
