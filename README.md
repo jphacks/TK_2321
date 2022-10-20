@@ -36,8 +36,13 @@
 
 ・`pages/api`のディレクトリはreactページではなく[API ルート]として扱われます。
 
+
+
 ## デプロイ
 もっとも簡単なデプロイ方法Github pagesです。あなたのGithubのリポジトリのsettingsからSourceをGithub Actionsにしてください。pushするだけでデプロイができるようになります。
+
+
+materialのbrancheを使用する場合は`.github/workflows/deploy.yml`の6行目`branches: ['master']`を`branches: ['material']に必ず変更して下さい`
 
 
 ##
