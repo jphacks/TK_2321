@@ -2,7 +2,7 @@
 
 ## 初めに
 以下のコマンドを打ち込んでください
-`git clone https://github.com/konjikun/our-ts-env.git [あなたのリポジトリの名前(以下repoと呼ぶ)]`
+`git clone -b material https://github.com/konjikun/our-ts-env.git [あなたのリポジトリの名前(以下repoと呼ぶ)]`
 
 ＊[]は外してください
 
