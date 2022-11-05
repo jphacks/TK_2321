@@ -2,7 +2,7 @@
 
 ## 初めに
 以下のコマンドを打ち込んでください
-`git clone https://github.com/konjikun/our-ts-env.git [あなたのリポジトリの名前(以下repoと呼ぶ)]`
+`git clone -b material https://github.com/konjikun/our-ts-env.git [あなたのリポジトリの名前(以下repoと呼ぶ)]`
 
 ＊[]は外してください
 
@@ -36,8 +36,13 @@
 
 ・`pages/api`のディレクトリはreactページではなく[API ルート]として扱われます。
 
+
+
 ## デプロイ
 もっとも簡単なデプロイ方法Github pagesです。あなたのGithubのリポジトリのsettingsからSourceをGithub Actionsにしてください。pushするだけでデプロイができるようになります。
+
+
+materialのbrancheを使用する場合は`.github/workflows/deploy.yml`の6行目`branches: ['master']`を`branches: ['material']に必ず変更して下さい`
 
 
 ##
