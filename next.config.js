@@ -1,10 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
-  swcMinify: true,
-  eslint: {
-    dirs: ['src/components/', 'src/lib/', 'src/pages/']
-  }
+  basePath: process.env.GITHUB_REPOSITORY ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}` : '',
+  trailingSlash: true,
+  eslint: { ignoreDuringBuilds: true },
 }
-
-module.exports = nextConfig
