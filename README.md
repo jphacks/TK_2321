@@ -10,18 +10,18 @@
 
 ## 準備
 以下のコマンドを打ち込んでください
-`git clone -b material https://github.com/konjikun/our-ts-env.git [あなたのリポジトリの名前(以下repoと呼ぶ)]`
+`git clone -b material https://github.com/konjikun/our-ts-env.git [あなたのリポジトリの名前(以下hogeと呼ぶ)]`
 
 ＊[]は外してください
 
 
-`cd repo`
+`cd hoge`
 
 
 `code .`
 
 
-`git remote set-url origin [repoのurl]`
+`git remote set-url origin [hogeのurl]`
 
 
 `yarn install`
