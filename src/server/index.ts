@@ -1,52 +1,33 @@
 import type { FastifyInstance } from 'fastify'
 import Fastify from 'fastify'
-import { fastify as f } from 'fastify'
 import cors from '@fastify/cors'
 import { PrismaClient } from '@prisma/client'
-import { chatGpt } from './components/chatGpt'
 
 const prisma = new PrismaClient()
 const fastify: FastifyInstance = Fastify()
-const server = f()
 
 async function kusa() {
   ;(async () => {
-    await fastify.register(cors, {})
+    await fastify.register(cors, {
+      // 送り返す！
+    })
 
-    fastify.post('/data', (req, reply) => {
+    fastify.post('/data', (req) => {
       const data = req.body as {
         mail: string
         password: string
-        //name: string
-        faculty: string
+        name: string
+        familly: string
       }
-
+      console.log(data)
       const fmail: string = data.mail
       const fpassword: string = data.password
-      //const fname: string = data.name
-      const ffaculty: string = data.faculty
-      return main(fmail, fpassword, ffaculty, data)
+      const fname: string = data.name
+      const ffamilly: string = data.familly
+      console.log('postで受け取ることはできた')
+      return main(fmail, fpassword, fname, ffamilly)
     })
 
-    fastify.post('/login', async (req, reply) => {
-      const userData = req.body as {
-        email: FormDataEntryValue
-        password: FormDataEntryValue
-      }
-      //reply.send(userData)
-    })
-
-    //テキストを受け取りchatGPTAPIに投げる
-    fastify.post('/text', async (req, reply) => {
-      const text = req.body as {
-        InputText: string
-      }
-      const answer = await chatGpt(text.InputText)
-      if (answer) {
-        //await returnText(answer)
-      }
-      reply.send(answer)
-    })
     await fastify.listen({ port: 8080 })
     console.log(`Server listening at ${8080}`)
   })()
@@ -54,35 +35,28 @@ async function kusa() {
   //return main()
 }
 
-/*
-async function returnText(answer: string) {
-  fastify.get('/text', (req, reply) => {
-    console.log('getできた')
-    return answer
-  })
-}
-*/
-
 async function main(
   fmail: string,
   fpassword: string,
-  //fname: string,
-  ffaculty: string,
-  data: any
+  fname: string,
+  ffamilly: string,
 ) {
   const result = await prisma.user.create({
     data: {
       mail: fmail,
-      //name: fname,
+      name: fname,
       password: fpassword,
-      faculty: ffaculty,
+      familly: ffamilly,
     },
   })
+  console.log(result)
+  console.log('mainは回った')
   //return response()
 }
 
 kusa()
   .catch((e) => console.error(e))
   .finally(async () => {
+    console.log('これでもう終わる！')
     await prisma.$disconnect()
   })
