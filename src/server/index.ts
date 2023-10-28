@@ -1,62 +1,25 @@
-import type { FastifyInstance } from 'fastify'
-import Fastify from 'fastify'
-import cors from '@fastify/cors'
-import { PrismaClient } from '@prisma/client'
+import express from 'express'
+import cors from 'cors'
+import { ExpressPeerServer } from 'peer'
+import http from 'http'
 
-const prisma = new PrismaClient()
-const fastify: FastifyInstance = Fastify()
+const app = express()
 
-async function kusa() {
-  ;(async () => {
-    await fastify.register(cors, {
-      // 送り返す！
-    })
+// CORS設定を有効にします。
+app.use(cors())
 
-    fastify.post('/data', (req) => {
-      const data = req.body as {
-        mail: string
-        password: string
-        name: string
-        familly: string
-      }
-      console.log(data)
-      const fmail: string = data.mail
-      const fpassword: string = data.password
-      const fname: string = data.name
-      const ffamilly: string = data.familly
-      console.log('postで受け取ることはできた')
-      return main(fmail, fpassword, fname, ffamilly)
-    })
+const PORT = 9000
 
-    await fastify.listen({ port: 8080 })
-    console.log(`Server listening at ${8080}`)
-  })()
+// HTTPサーバーを作成します。
+const server = http.createServer(app)
 
-  //return main()
-}
+const peerServer = ExpressPeerServer(server, {
+  path: '/myapp',
+})
 
-async function main(
-  fmail: string,
-  fpassword: string,
-  fname: string,
-  ffamilly: string,
-) {
-  const result = await prisma.user.create({
-    data: {
-      mail: fmail,
-      name: fname,
-      password: fpassword,
-      familly: ffamilly,
-    },
-  })
-  console.log(result)
-  console.log('mainは回った')
-  //return response()
-}
+// PeerServer を express アプリに追加します。
+app.use('/peerjs', peerServer)
 
-kusa()
-  .catch((e) => console.error(e))
-  .finally(async () => {
-    console.log('これでもう終わる！')
-    await prisma.$disconnect()
-  })
+server.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`)
+})
