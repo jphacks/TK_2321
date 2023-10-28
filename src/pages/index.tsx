@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import styled from 'styled-components'
 import Button from '@mui/material/Button'
+import React from 'react'
 
 const Container = styled.div`
   display: flex;
