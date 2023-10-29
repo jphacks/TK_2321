@@ -1,7 +1,5 @@
 import type { MediaConnection } from 'peerjs'
-//eslint-disable-next-line
-import React from 'react'
-import { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import usePeerManager from '../usePeerManager'
 import TableComponent from '@/components/Utils/TableComponent'
 
@@ -10,6 +8,7 @@ const Call: React.FC = () => {
   const [peerIdToCall, setPeerIdToCall] = useState<string | null>(null)
   const [remoteStream, setRemoteStream] = useState<MediaStream | null>(null)
   const [isConnected, setIsConnected] = useState<boolean>(false)
+  const [isCaller, setIsCaller] = useState<boolean>(false) // 通話を開始するユーザーを識別するためのstate
   const remoteVideoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
@@ -36,6 +35,7 @@ const Call: React.FC = () => {
   }, [remoteStream])
 
   const handleCallPeer = () => {
+    setIsCaller(true) // 通話を開始するユーザーとして識別
     if (peerIdToCall) {
       navigator.mediaDevices
         .getUserMedia({ video: false, audio: true })
@@ -59,7 +59,8 @@ const Call: React.FC = () => {
         placeholder="Enter peer ID"
         onChange={(e) => setPeerIdToCall(e.target.value)}
       />
-      <button onClick={handleCallPeer}>Call</button>
+      <button onClick={handleCallPeer}>ポケモン</button>
+      <button onClick={handleCallPeer}>遊戯王</button>
       {isConnected && (
         <div
           style={{
@@ -72,6 +73,7 @@ const Call: React.FC = () => {
             top: 0,
             left: 0,
             zIndex: 1,
+            transform: isCaller ? 'rotate(180deg)' : 'none', // 通話を開始するユーザーのみ反転
           }}
         >
           <TableComponent />
