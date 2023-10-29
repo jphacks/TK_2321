@@ -53,6 +53,7 @@
     "@types/node": "^18.8.3",
     "@types/peerjs": "^1.1.0",
     "@types/react": "^18.0.21",
+    "@types/storybook__react": "^5.2.1",
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "babel-loader": "^9.1.0",
