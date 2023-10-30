@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import getPokemonCard from '../../../services/pokemon/get-card'
-import { Card } from '../../../types'
+import { Card } from '@/types'
 
 type Props = {
   id: number
@@ -25,14 +25,7 @@ const PokemonCard = (props: Props) => {
 
   return (
     <div>
-      {pokemon ? (
-        <img
-          src={`${pokemon.image}/high.jpg`}
-          alt={pokemon.name}
-        ></img>
-      ) : (
-        <p>Loading...</p>
-      )}
+      {pokemon ? (<img src={`${pokemon.image}/high.jpg`} alt={pokemon.name}></img>) : (<p>Loading...</p>)}
     </div>
   )
 }
