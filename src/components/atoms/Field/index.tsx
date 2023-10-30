@@ -2,13 +2,14 @@ import React, {useState, useEffect} from 'react'
 import { BackGroundKind } from '@/types/Field';
 
 type Props = {
-    background: BackGroundKind
+    background?: BackGroundKind
     rows: number
     cols: number
 }
 
+
 const BattleField = (props: Props) => {
-    const [background, setBackGround] = useState<string | null>(null)
+    const [background, setBackGround] = useState<string>("@/assets/backgrounds/defaultBattleField.avif")
 
     const [rows, setRows] = useState<number>(10)
     const [cols, setCols] = useState<number>(10)
@@ -16,9 +17,9 @@ const BattleField = (props: Props) => {
     useEffect(() => {
         switch(props.background) {
             case "Pokemon":
-                setBackGround("@/assets/backgrounds/pokemonBattleField.jpeg");
+                setBackGround("@/assets/pokemonBattleField.jpeg");
                 break;
-            case "Pokemon":
+            case "Yugioh":
                 setBackGround("@/assets/backgrounds/yugiohBattleField.jpg");
                 break;
             default:
@@ -30,10 +31,9 @@ const BattleField = (props: Props) => {
         setCols(props.cols)
     }, [])
 
+
     return(
-        <div>
-            
-        </div>
+        <img src="@/assets/backgrounds/pokemonBattleField.jpeg" alt="background" />
     )
 }
 

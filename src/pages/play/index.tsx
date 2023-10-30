@@ -1,12 +1,10 @@
 import React from 'react'
-import PokemonCard from '@/components/atoms/Card/PokemonCard'
-import AppLogo from '@/components/atoms/AppLogo'
-import YugiohCard from '@/components/atoms/Card/YugiohCard'
+import BattleField from '@/components/atoms/Field'
 
 const Test = () => {
   return (
     <div>
-      <YugiohCard id={46986421} />
+      <BattleField background='Pokemon' rows={15} cols={20}/>
     </div>
   )
 }
