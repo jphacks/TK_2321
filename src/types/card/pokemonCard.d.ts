@@ -24,7 +24,7 @@ type SetResume = {
 }
 
 // Card
-type PokemonCard = {
+export type PokemonCardType = {
   id:               string                // Card Unique ID
   localId:          string | number       // Card Local ID
   name:	            string                // Card Name
@@ -43,11 +43,4 @@ type PokemonCard = {
   stage:	          string                //The Pokémon Stage
   suffix:           string                // The Card suffix
   item:	            CardItem              //The Pokémon Item	
-}
-  
-
-
-// API Context
-export type EnvType = {
-  NEXT_PUBLIC_POKEMONTCG_API_URL: string
 }

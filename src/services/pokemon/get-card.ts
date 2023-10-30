@@ -1,4 +1,4 @@
-import { PokemonCard } from "@/types/card/pokemonCard";
+import { PokemonCardType } from "@/types/card/pokemonCard";
 import { fetcher } from "@/utils";
 
 export type GetPokemonCardParams = {
@@ -13,7 +13,7 @@ export type GetPokemonCardParams = {
  * @param params Pokemon Card ID
  * @returns Card
  */
-const getPokemonCard = async ( prop: GetPokemonCardParams ): Promise<PokemonCard> => {
+const getPokemonCard = async ( prop: GetPokemonCardParams ): Promise<PokemonCardType> => {
   return await fetcher({
     resource: `${process.env.NEXT_PUBLIC_POKEMONTCG_API_URL}/cards/${prop.id}`,
   });

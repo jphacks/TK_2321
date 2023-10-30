@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import getYugiohCard from '@/services/yugioh/get-card';
-import { YugiohCard } from '@/types/card/yugiohCard';
+import { YugiohCardType } from '@/types/card/yugiohCard';
 
 type Props = {
     id: number
 }
 
 const YugiohCard = (props: Props) => {
-    const [yugioh, setYugioh] = useState<YugiohCard | null>(null)
+    const [yugioh, setYugioh] = useState<YugiohCardType | null>(null)
 
     useEffect(() => {
         const fetchData = async () => {

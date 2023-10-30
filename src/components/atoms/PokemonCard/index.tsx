@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import getPokemonCard from '../../../services/pokemon/get-card'
-import { PokemonCard } from '@/types/card/pokemonCard'
+import { PokemonCardType } from '@/types/card/pokemonCard'
 
 type Props = {
   id: number
 }
 
 const PokemonCard = (props: Props) => {
-  const [pokemon, setPokemon] = useState<PokemonCard | null>(null)
+  const [pokemon, setPokemon] = useState<PokemonCardType | null>(null)
 
   useEffect(() => {
     const fetchData = async () => {
