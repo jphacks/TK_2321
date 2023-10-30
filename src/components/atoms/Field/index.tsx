@@ -1,5 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import { BackGroundKind } from '@/types/Field';
+import Image, { StaticImageData } from 'next/image';
+import pokemonBF from '@/assets/backgrounds/pokemonBattleField.jpeg'
+import yugiohBF from '@/assets/backgrounds/yugiohBattleField.jpg'
+import defaultBF from '@/assets/backgrounds/defaultBattleField.avif'
 
 type Props = {
     background?: BackGroundKind
@@ -9,7 +13,7 @@ type Props = {
 
 
 const BattleField = (props: Props) => {
-    const [background, setBackGround] = useState<string>("@/assets/backgrounds/defaultBattleField.avif")
+    const [background, setBackGround] = useState<StaticImageData>(defaultBF)
 
     const [rows, setRows] = useState<number>(10)
     const [cols, setCols] = useState<number>(10)
@@ -17,13 +21,13 @@ const BattleField = (props: Props) => {
     useEffect(() => {
         switch(props.background) {
             case "Pokemon":
-                setBackGround("@/assets/pokemonBattleField.jpeg");
+                setBackGround(pokemonBF);
                 break;
             case "Yugioh":
-                setBackGround("@/assets/backgrounds/yugiohBattleField.jpg");
+                setBackGround(yugiohBF);
                 break;
             default:
-                setBackGround("@/assets/backgrounds/defaultBattleField.avif");
+                setBackGround(defaultBF);
                 break;
         }
 
@@ -33,7 +37,12 @@ const BattleField = (props: Props) => {
 
 
     return(
-        <img src="@/assets/backgrounds/pokemonBattleField.jpeg" alt="background" />
+        <Image 
+            src={background} 
+            alt="background" 
+            width={1200} 
+            height={1000}
+        />
     )
 }
 
