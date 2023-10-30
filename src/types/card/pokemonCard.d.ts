@@ -24,7 +24,7 @@ type SetResume = {
 }
 
 // Card
-type Card = {
+type PokemonCard = {
   id:               string                // Card Unique ID
   localId:          string | number       // Card Local ID
   name:	            string                // Card Name

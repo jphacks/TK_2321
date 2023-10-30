@@ -1,11 +1,11 @@
-import { Card } from "../../types";
-import { fetcher } from "../../utils";
+import { PokemonCard } from "@/types/card/pokemonCard";
+import { fetcher } from "@/utils";
 
 /**
  * Pokemon API (get one Pokemon Card)
  * @returns All Cards
  */
-const getAllPokemonCard = async (): Promise<[Card]> => {
+const getAllPokemonCard = async (): Promise<[PokemonCard]> => {
   return await fetcher({
     resource: `${process.env.NEXT_PUBLIC_POKEMONTCG_API_URL}/cards`
   });
