@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 interface TableComponentProps {
-  images?: ImageInfo[]
+  images?: []
 }
 
 const TableComponent: React.FC<TableComponentProps> = ({ images = [] }) => {
