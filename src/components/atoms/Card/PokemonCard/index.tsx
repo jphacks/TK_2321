@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import getPokemonCard from '../../../services/pokemon/get-card'
+import getPokemonCard from '@/services/pokemon/get-card'
 import { PokemonCardType } from '@/types/card/pokemonCard'
 
 type Props = {
@@ -14,7 +14,6 @@ const PokemonCard = (props: Props) => {
       try {
         const response = await getPokemonCard({ id: props.id })
         setPokemon(response)
-        console.log(response)
       } catch (error) {
         console.error(error)
       }

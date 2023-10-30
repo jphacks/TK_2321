@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import getYugiohCard from '@/services/yugioh/get-card';
-import { YugiohCardType } from '@/types/card/yugiohCard';
+import { YugiohCardType, CardInfo} from '@/types/card/yugiohCard';
 
 type Props = {
     id: number
@@ -14,18 +14,18 @@ const YugiohCard = (props: Props) => {
             try {
                 const response = await getYugiohCard({ id: props.id })
                 setYugioh(response)
-                console.log(response)
             } catch (error) {
                 console.error(error)
             }
         }
-    
         fetchData()
     }, [])
 
     return (
         <div>
-          {yugioh ? (<img src={`${yugioh.image}/high.jpg`} alt={yugioh.name}></img>) : (<p>Loading...</p>)}
+          {yugioh ? 
+          (<img src={`${yugioh.data[0].card_images[0].image_url}`} alt={yugioh.data[0].name}></img>) : 
+          (<p>Loading...</p>)}
         </div>
     )
 }

@@ -1,12 +1,12 @@
 import React from 'react'
-import PokemonCard from '@/components/atoms/PokemonCard'
+import PokemonCard from '@/components/atoms/Card/PokemonCard'
 import AppLogo from '@/components/atoms/AppLogo'
+import YugiohCard from '@/components/atoms/Card/YugiohCard'
 
 const Test = () => {
   return (
     <div>
-      <PokemonCard id={89} />
-      <AppLogo />
+      <YugiohCard id={46986421} />
     </div>
   )
 }

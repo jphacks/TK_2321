@@ -1,28 +1,27 @@
 type CardSet = {
-  setName: string
-  setCode: string
-  setRarity: string
-  setRarity_code: string
-  setPrice: string
+  set_name: string
+  set_code: string
+  set_rarity: string
+  set_rarity_code: string
+  set_price: string
 }
 
-type CardImages = {
+type CardImage = {
     id: number
-    imageUrl: string
-    imageUrlSmall: string
-    imageUrlCropped: string
+    image_url: string
+    image_url_small: string
+    image_url_cropped: string
 }
 
-type CardPrices = {
-    cardmarketPrice: number
-    tcgplayerPrice: number
-    ebayPrice: number
-    amazonPrice: number
-    coolstuffincPrice: number
+type CardPrice = {
+    cardmarket_price: number
+    tcgplayer_price: number
+    ebay_price: number
+    amazon_price: number
+    coolstuffinc_price: number
 }
 
-// Card
-export type YugiohCardType = {
+export type CardInfo = {
   id: number
   name: string
   type: string
@@ -34,5 +33,12 @@ export type YugiohCardType = {
   race: string
   attribute: string
   archetype: string
-  cardSets: [CardSet]
+  card_sets: CardSet[]
+  card_images: CardImage[]
+  card_prices: CardPrice[]
+}
+
+// Card
+export type YugiohCardType = {
+  data: CardInfo[]
 }

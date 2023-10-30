@@ -15,7 +15,7 @@ export type GetYugiohCardParams = {
  */
 const getYugiohCard = async ( prop: GetYugiohCardParams ): Promise<YugiohCardType> => {
   return await fetcher({
-    resource: `${process.env.NEXT_PUBLIC_YUGIOH_URL}?cards=${prop.id}`,
+    resource: `${process.env.NEXT_PUBLIC_YUGIOH_URL}?id=${prop.id}`,
   });
 }
 

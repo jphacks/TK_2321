@@ -3,7 +3,7 @@ import YugiohCard from './index'
 
 const meta: Meta<typeof YugiohCard> = {
   component: YugiohCard,
-  title: 'Atoms/YugiohCard',
+  title: 'Atoms/Card/YugiohCard',
 }
 
 export default meta
