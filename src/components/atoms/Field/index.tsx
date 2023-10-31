@@ -3,7 +3,7 @@ import { BackGroundKind } from '@/types/Field'
 import Image, { StaticImageData } from 'next/image'
 import pokemonBF from '@/assets/backgrounds/pokemonBattleField.jpeg'
 import yugiohBF from '@/assets/backgrounds/yugiohBattleField.jpg'
-import defaultBF from '@/assets/backgrounds/defaultBattleField.avif'
+import defaultBF from '@/assets/backgrounds/defaultBattleField.jpeg'
 
 type Props = {
   background?: BackGroundKind
