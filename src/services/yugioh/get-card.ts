@@ -1,5 +1,5 @@
-import { YugiohCardType } from "@/types/card/yugiohCard";
-import { fetcher } from "@/utils";
+import { YugiohCardType } from '@/types/card/yugiohCard'
+import { fetcher } from '@/utils'
 
 export type GetYugiohCardParams = {
   /**
@@ -13,10 +13,12 @@ export type GetYugiohCardParams = {
  * @param params Yugioh Card ID
  * @returns Card
  */
-const getYugiohCard = async ( prop: GetYugiohCardParams ): Promise<YugiohCardType> => {
+const getYugiohCard = async (
+  prop: GetYugiohCardParams
+): Promise<YugiohCardType> => {
   return await fetcher({
     resource: `${process.env.NEXT_PUBLIC_YUGIOH_URL}?id=${prop.id}`,
-  });
+  })
 }
 
-export default getYugiohCard;
+export default getYugiohCard

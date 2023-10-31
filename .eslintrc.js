@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:@typescript-eslint/recommended', 'plugin:@typescript-eslint/eslint-recommended', 'plugin:react/jsx-runtime', 'prettier', 'plugin:storybook/recommended'],
+  extends: ['plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:@typescript-eslint/recommended', 'plugin:@typescript-eslint/eslint-recommended', 'plugin:react/jsx-runtime', 'plugin:storybook/recommended', 'eslint:recommended', 'prettier'],
   plugins: ['@typescript-eslint', 'react'],
   parser: '@typescript-eslint/parser',
   env: {

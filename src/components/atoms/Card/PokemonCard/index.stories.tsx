@@ -8,4 +8,4 @@ const meta: Meta<typeof PokemonCard> = {
 
 export default meta
 
-export const BasePokemonCard = {};
+export const BasePokemonCard = {}

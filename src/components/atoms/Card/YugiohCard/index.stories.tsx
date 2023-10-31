@@ -8,4 +8,4 @@ const meta: Meta<typeof YugiohCard> = {
 
 export default meta
 
-export const BaseYugiohCard = {};
+export const BaseYugiohCard = {}

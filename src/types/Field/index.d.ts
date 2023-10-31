@@ -1,1 +1,1 @@
-export type BackGroundKind = "Pokemon" | "Yugioh"
+export type BackGroundKind = 'Pokemon' | 'Yugioh'

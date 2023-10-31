@@ -5,8 +5,26 @@ type Props = {
 }
 
 const AppLogo = (props: Props) => (
-  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width={props.size || "512px"} height={props.size || "512px"} viewBox="0 0 512 512" enable-background="new 0 0 512 512" xmlSpace="preserve"> 
-    <image id="image0" width="512" height="512" x="0" y="0" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+  <svg
+    version="1.1"
+    id="Layer_1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    width={props.size || '512px'}
+    height={props.size || '512px'}
+    viewBox="0 0 512 512"
+    enable-background="new 0 0 512 512"
+    xmlSpace="preserve"
+  >
+    <image
+      id="image0"
+      width="512"
+      height="512"
+      x="0"
+      y="0"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
 AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA7EAAAOxAGVKw4bAABxX0lEQVR42u2dZ4AcR532n+qZTdrVapW1q5xlywFbBpxtOYLB
 JIM4RzBO2OaM77g7zsCB4Y67g3sPOILBNmCDzxyYA8MZB9myJVnOOUkOyllW2rzaMNP1ftid3Qkdqnu6u3pmnt8HzFT/q/pfPat5nq6qrgYIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEFIaCN0J
 EEIU+GPnpOpk/0QzbUyUwpwAoEkCTQZEkwk0QWKMBEYDot6AHAWgxgTGAEgCGAM50pQcLDfyzmACaM8EDP1POyBSg/+VfQB6IEU3DLMT0miDKduG6rTBQBtMcz+EsQ9m/14sa96n+5IRQpyhASBEJ/ds
@@ -487,9 +505,9 @@ uj8dmG4YxulSyFMkcKqAWJh9nAbAY/KKxdEbAPkWIB6HwBoMJFfhkvF82x6paGgACMmj/v69U8x0
 NI6HkMfDxPshMI0GwLXA5YSBGoAdAJ4FxNOA+QxE/0tYNv2QSouEVCo0AIT4oOne1qa+pDzCNMUS
 IbAEwBIAiyRg5ATSAIRhAHZD4EVI+SJgvAghn8eySXtUahNCRqABICQo7tnbUFVXc3gC5mJpysMg
 jCMg5WEAZkqbf2s0ALYfJSC2AnIdgLWAXAfTWIv+1Dpus0tIMNAAEBI29+xtqKqrXiBMzAXMeQJi
-LoB5EpgrgWk5sZVlACSAnQA2QGAjTLEBwtwIgQ0wsR7LJnV5vtaEEGVoAAjRyQOypmagY3raNKcJgRlSYIaAnC6lMQ0wJwOYAmAigGqgpAxAH4B9EHgXptgDYAcgdwDYBshtSJvb0dixA+fN74v0ehNChqEBIKQU+Evb2GqZmmymjYlSivEAmiTQZAhzrAk0wRRNUoh6AGMMyBoAo0yBekhUA2iCHPm3LoF6DBmKLPoBdGcChu7O2wbLRTeE7IFEH4B2QHRDyjZItMJAGyDbINEGaR6AMPYhkdiDj49t033JCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCkP/j+KY9fKwAFfngAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMy0xMC0zMFQwNDowOToxMSswMTowMO3UhmMAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjMtMTAtMzBUMDQ6MDk6MTErMDE6MDCciT7fAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAABJRU5ErkJggg==" />
-</svg>
-
+LoB5EpgrgWk5sZVlACSAnQA2QGAjTLEBwtwIgQ0wsR7LJnV5vtaEEGVoAAjRyQOypmagY3raNKcJgRlSYIaAnC6lMQ0wJwOYAmAigGqgpAxAH4B9EHgXptgDYAcgdwDYBshtSJvb0dixA+fN74v0ehNChqEBIKQU+Evb2GqZmmymjYlSivEAmiTQZAhzrAk0wRRNUoh6AGMMyBoAo0yBekhUA2iCHPm3LoF6DBmKLPoBdGcChu7O2wbLRTeE7IFEH4B2QHRDyjZItMJAGyDbINEGaR6AMPYhkdiDj49t033JCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCkP/j+KY9fKwAFfngAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMy0xMC0zMFQwNDowOToxMSswMTowMO3UhmMAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjMtMTAtMzBUMDQ6MDk6MTErMDE6MDCciT7fAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAABJRU5ErkJggg=="
+    />
+  </svg>
 )
 
 export default AppLogo

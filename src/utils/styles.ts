@@ -10,7 +10,6 @@ type FontSizeThemeKeys = keyof typeof theme.fontSizes
 type LetterSpacingThemeKeys = keyof typeof theme.letterSpacings
 type LineHeightThemeKeys = keyof typeof theme.lineHeights
 
-
 // 各Themeのキーの型
 export type Space = SpaceThemeKeys | (string & {})
 export type Color = ColorThemeKeys | (string & {})
@@ -33,7 +32,11 @@ const BREAKPOINTS: { [key: string]: string } = {
  * @param theme AppTheme
  * @returns CSSプロパティとその値 (ex. background-color: white;)
  */
-export function toPropValue<T>(propKey: string, prop?: Responsive<T>, theme?: AppTheme) {
+export function toPropValue<T>(
+  propKey: string,
+  prop?: Responsive<T>,
+  theme?: AppTheme
+) {
   if (prop === undefined) return undefined
 
   if (isResponsivePropType(prop)) {
@@ -45,8 +48,8 @@ export function toPropValue<T>(propKey: string, prop?: Responsive<T>, theme?: Ap
           `${propKey}: ${toThemeValueIfNeeded(
             propKey,
             prop[responsiveKey],
-            theme,
-          )};`,
+            theme
+          )};`
         )
       } else if (
         responsiveKey === 'sm' ||
@@ -59,7 +62,7 @@ export function toPropValue<T>(propKey: string, prop?: Responsive<T>, theme?: Ap
         const style = `${propKey}: ${toThemeValueIfNeeded(
           propKey,
           prop[responsiveKey],
-          theme,
+          theme
         )};`
         result.push(`@media screen and (min-width: ${breakpoint}) {${style}}`)
       }
@@ -146,7 +149,6 @@ function isResponsivePropType<T>(prop: any): prop is ResponsiveProp<T> {
   )
 }
 
-
 function isSpaceThemeKeys(prop: any, theme: AppTheme): prop is SpaceThemeKeys {
   return Object.keys(theme.space).filter((key) => key == prop).length > 0
 }
@@ -155,14 +157,25 @@ function isColorThemeKeys(prop: any, theme: AppTheme): prop is ColorThemeKeys {
   return Object.keys(theme.colors).filter((key) => key == prop).length > 0
 }
 
-function isFontSizeThemeKeys(prop: any, theme: AppTheme): prop is FontSizeThemeKeys {
+function isFontSizeThemeKeys(
+  prop: any,
+  theme: AppTheme
+): prop is FontSizeThemeKeys {
   return Object.keys(theme.fontSizes).filter((key) => key == prop).length > 0
 }
 
-function isLetterSpacingThemeKeys(prop: any, theme: AppTheme): prop is LetterSpacingThemeKeys {
-  return Object.keys(theme.letterSpacings).filter((key) => key == prop).length > 0
+function isLetterSpacingThemeKeys(
+  prop: any,
+  theme: AppTheme
+): prop is LetterSpacingThemeKeys {
+  return (
+    Object.keys(theme.letterSpacings).filter((key) => key == prop).length > 0
+  )
 }
 
-function isLineHeightThemeKeys(prop: any, theme: AppTheme): prop is LineHeightThemeKeys {
+function isLineHeightThemeKeys(
+  prop: any,
+  theme: AppTheme
+): prop is LineHeightThemeKeys {
   return Object.keys(theme.lineHeights).filter((key) => key == prop).length > 0
 }

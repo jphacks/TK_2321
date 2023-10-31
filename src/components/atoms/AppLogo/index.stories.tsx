@@ -3,9 +3,9 @@ import AppLogo from './index'
 
 const meta: Meta<typeof AppLogo> = {
   component: AppLogo,
-  title: "Atoms/AppLogo"
-};
+  title: 'Atoms/AppLogo',
+}
 
-export default meta;
+export default meta
 
-export const BaseLogo = {};
+export const BaseLogo = {}

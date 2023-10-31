@@ -7,18 +7,18 @@ type CardSet = {
 }
 
 type CardImage = {
-    id: number
-    image_url: string
-    image_url_small: string
-    image_url_cropped: string
+  id: number
+  image_url: string
+  image_url_small: string
+  image_url_cropped: string
 }
 
 type CardPrice = {
-    cardmarket_price: number
-    tcgplayer_price: number
-    ebay_price: number
-    amazon_price: number
-    coolstuffinc_price: number
+  cardmarket_price: number
+  tcgplayer_price: number
+  ebay_price: number
+  amazon_price: number
+  coolstuffinc_price: number
 }
 
 export type CardInfo = {
