@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import getPokemonCard from '@/services/pokemon/get-card'
 import { PokemonCardType } from '@/types/card/pokemonCard'
+import pokemonCardBack from '@/assets/cards/pokemonCardBack.png'
 
 type Props = {
-  id: number
+  id: string
 }
 
 const PokemonCard = (props: Props) => {
   const [pokemon, setPokemon] = useState<PokemonCardType | null>(null)
+  const [frontBack, setFrontBack] = useState<boolean>(true)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +26,14 @@ const PokemonCard = (props: Props) => {
 
   return (
     <div>
-      {pokemon ? (<img src={`${pokemon.image}/high.jpg`} alt={pokemon.name}></img>) : (<p>Loading...</p>)}
+      {pokemon ? (
+        <img
+          src={`${pokemon.image}/high.jpg`}
+          alt={pokemon.name}
+        ></img>
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   )
 }

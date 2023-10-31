@@ -22,7 +22,7 @@ type CardPrice = {
 }
 
 export type CardInfo = {
-  id: number
+  id: string
   name: string
   type: string
   frameType: string

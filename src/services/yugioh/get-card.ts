@@ -5,7 +5,7 @@ export type GetYugiohCardParams = {
   /**
    * ID of the Yugioh Card to get
    */
-  id: number
+  id: string
 }
 
 /**

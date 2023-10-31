@@ -3,7 +3,7 @@ import getYugiohCard from '@/services/yugioh/get-card'
 import { YugiohCardType, CardInfo } from '@/types/card/yugiohCard'
 
 type Props = {
-  id: number
+  id: string
 }
 
 const YugiohCard = (props: Props) => {

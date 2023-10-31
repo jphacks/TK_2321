@@ -5,7 +5,7 @@ export type GetPokemonCardParams = {
   /**
    * ID of the Pokemon Card to get
    */
-  id: number
+  id: string
 }
 
 /**
