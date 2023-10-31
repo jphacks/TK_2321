@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 import getYugiohCard from '@/services/yugioh/get-card'
 import { YugiohCardType, CardInfo } from '@/types/card/yugiohCard'
 
@@ -24,10 +25,10 @@ const YugiohCard = (props: Props) => {
   return (
     <div>
       {yugioh ? (
-        <img
+        <Image
           src={`${yugioh.data[0].card_images[0].image_url}`}
           alt={yugioh.data[0].name}
-        ></img>
+        />
       ) : (
         <p>Loading...</p>
       )}

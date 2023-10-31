@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 import getPokemonCard from '@/services/pokemon/get-card'
 import { PokemonCardType } from '@/types/card/pokemonCard'
 import pokemonCardBack from '@/assets/cards/pokemonCardBack.png'
@@ -27,10 +28,10 @@ const PokemonCard = (props: Props) => {
   return (
     <div>
       {pokemon ? (
-        <img
+        <Image
           src={`${pokemon.image}/high.jpg`}
           alt={pokemon.name}
-        ></img>
+        />
       ) : (
         <p>Loading...</p>
       )}
