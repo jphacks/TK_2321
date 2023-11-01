@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Button from '@mui/material/Button'
 
 type ButtonProps = {
-  color: string,
+  color: string
   backgroundColor: string
 }
 
@@ -150,7 +150,10 @@ const HomePage: NextPage = () => {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </Title>
 
-        <MyButton color='red' backgroundColor='red'/>
+        <MyButton
+          color="red"
+          backgroundColor="red"
+        />
 
         <Description>
           Get started by editing <Code bgColor="#fafafa">pages/index.js</Code>
