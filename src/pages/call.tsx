@@ -5,6 +5,7 @@ import usePeerManager from '../usePeerManager'
 import TableComponent from '@/components/Utils/TableComponent'
 import { useEffect, useRef, useState } from 'react'
 
+
 const Call: React.FC = () => {
   const { myId, callPeer, onCall } = usePeerManager()
   const [peerIdToCall, setPeerIdToCall] = useState<string | null>(null)
@@ -18,6 +19,7 @@ const Call: React.FC = () => {
     setPokemonButtonClicked(true) // ポケモンボタンがクリックされた状態に更新
     handleCallPeer()
   }
+
 
   useEffect(() => {
     navigator.mediaDevices
@@ -100,6 +102,7 @@ const Call: React.FC = () => {
             <TableComponent />
           </div>
         )}
+
         <video
           ref={remoteVideoRef}
           playsInline
@@ -112,6 +115,7 @@ const Call: React.FC = () => {
           }} // Adjusted video position
         />
       </div>
+
     </div>
   )
 }

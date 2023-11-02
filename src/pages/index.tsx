@@ -1,8 +1,25 @@
+import React from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styled from 'styled-components'
 import Button from '@mui/material/Button'
-import React from 'react'
+
+type ButtonProps = {
+  color: string
+  backgroundColor: string
+}
+
+const MyButton = styled.button<ButtonProps>`
+  color: ${(props) => props.color};
+  background: ${(props) => props.backgroundColor};
+  border: 2px solid ${(props) => props.color};
+
+  font-size: 2pem;
+  margin: 1em;
+  padding: 0.25em;
+  border-radius: 8px;
+  cursor: pointer;
+`
 
 const Container = styled.div`
   display: flex;
@@ -132,6 +149,11 @@ const HomePage: NextPage = () => {
         <Title>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </Title>
+
+        <MyButton
+          color="red"
+          backgroundColor="red"
+        />
 
         <Description>
           Get started by editing <Code bgColor="#fafafa">pages/index.js</Code>

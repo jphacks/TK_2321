@@ -14,6 +14,7 @@ interface TableComponentProps {
 const TableComponent: React.FC<TableComponentProps> = ({ images = [] }) => {
   const rows = 11
   const cols = 12
+
   const [selectedCell, setSelectedCell] = useState<string | null>(null)
 
   const [specifiedImageUrls, setSpecifiedImageUrls] = useState<{
@@ -42,6 +43,7 @@ const TableComponent: React.FC<TableComponentProps> = ({ images = [] }) => {
 
   return (
     <div style={{ overflow: 'auto', width: '100%', height: '100vh' }}>
+
       <table>
         <tbody>
           {Array.from({ length: rows }).map((_, rowIndex) => (
@@ -96,6 +98,7 @@ const TableComponent: React.FC<TableComponentProps> = ({ images = [] }) => {
                   </td>
                 )
               })}
+
             </tr>
           ))}
         </tbody>
